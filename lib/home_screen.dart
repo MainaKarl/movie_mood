@@ -27,33 +27,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Trending Movies',
-              style: GoogleFonts.aBeeZee(fontSize: 25),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: CarouselSlider.builder(
-                  itemCount: 10,
-                  options: CarouselOptions(
-                    height: 300,
-                    autoPlay: true,
-                    viewportFraction: 0.55,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlayAnimationDuration: const Duration(seconds: 2),
-                  ),
-                  itemBuilder: (context,itemIndex, pageViewIndex){
-                    return Container(
-                    height: 300,
-                    width: 200,
-                      color: Colors.orange,
-                    );
-            },
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Trending Movies',
+                style: GoogleFonts.aBeeZee(fontSize: 25),
               ),
-            )
-          ],
+              const SizedBox(height: 10,),
+              SizedBox(
+                width: double.infinity,
+                child: CarouselSlider.builder(
+                    itemCount: 10,
+                    options: CarouselOptions(
+                      height: 300,
+                      autoPlay: true,
+                      viewportFraction: 0.55,
+                      enlargeCenterPage: true,
+                      pageSnapping: true,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      autoPlayAnimationDuration: const Duration(seconds: 2),
+                    ),
+                    itemBuilder: (context,itemIndex, pageViewIndex){
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                        height: 300,
+                        width: 200,
+                          color: Colors.orange,
+                        ),
+                      );
+              },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
