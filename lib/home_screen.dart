@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                         height: 300,
                         width: 200,
-                          color: Colors.orange,
+                          color: Colors.red,
                         ),
                       );
               },

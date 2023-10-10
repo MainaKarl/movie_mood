@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_mood/colors.dart';
 import 'package:movie_mood/home_screen.dart';
@@ -19,7 +20,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colours.scaffoldBgColor,
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: AnimatedSplashScreen(splash: Icons.movie_creation_outlined,
+          duration: 3000,
+          splashTransition: SplashTransition.scaleTransition,
+          backgroundColor: Colors.red,
+          nextScreen: const HomeScreen()),
     );
   }
 }
