@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text('Trending Movies',
                 style: GoogleFonts.aBeeZee(fontSize: 25),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(height: 30,),
               SizedBox(
                 width: double.infinity,
                 child: CarouselSlider.builder(
@@ -60,7 +60,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
               },
                 ),
-              )
+              ),
+              const SizedBox(height: 30),
+              Text('Top Rated Movies',
+                style:GoogleFonts.aBeeZee(
+                    fontSize: 25,
+                ),
+              ),
+              const SizedBox(height: 30),
             ],
           ),
         ),
