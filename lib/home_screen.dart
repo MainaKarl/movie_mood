@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_mood/widgets/movies_slider.dart';
+import 'package:movie_mood/widgets/trending_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,31 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.aBeeZee(fontSize: 25),
               ),
               const SizedBox(height: 30,),
-              SizedBox(
-                width: double.infinity,
-                child: CarouselSlider.builder(
-                    itemCount: 10,
-                    options: CarouselOptions(
-                      height: 300,
-                      autoPlay: true,
-                      viewportFraction: 0.55,
-                      enlargeCenterPage: true,
-                      pageSnapping: true,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      autoPlayAnimationDuration: const Duration(seconds: 2),
-                    ),
-                    itemBuilder: (context,itemIndex, pageViewIndex){
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                        height: 300,
-                        width: 200,
-                          color: Colors.red,
-                        ),
-                      );
-              },
-                ),
-              ),
+              const TrendingSlider(),
               const SizedBox(height: 30),
               Text('Top Rated Movies',
                 style:GoogleFonts.aBeeZee(
@@ -68,25 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              SizedBox(height: 200, width: double.infinity,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                itemCount: 10,
-                itemBuilder: (context, index){
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Container(
-                        color: Colors.red,
-                        height: 200,
-                        width: 150,
-                      ),
-                    ),
-                  );
-                },
-              ),),
+              const MovieSlider(),
               const SizedBox(height: 30),
               Text('Upcoming Movies',
                 style:GoogleFonts.aBeeZee(
@@ -94,25 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              SizedBox(height: 200, width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: 10,
-                  itemBuilder: (context, index){
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Container(
-                          color: Colors.red,
-                          height: 200,
-                          width: 150,
-                        ),
-                      ),
-                    );
-                  },
-                ),),
+              const MovieSlider(),
             ],
           ),
         ),
@@ -120,3 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+
+
