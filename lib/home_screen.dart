@@ -68,6 +68,51 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 30),
+              SizedBox(height: 200, width: double.infinity,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: 10,
+                itemBuilder: (context, index){
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        color: Colors.red,
+                        height: 200,
+                        width: 150,
+                      ),
+                    ),
+                  );
+                },
+              ),),
+              const SizedBox(height: 30),
+              Text('Upcoming Movies',
+                style:GoogleFonts.aBeeZee(
+                  fontSize: 25,
+                ),
+              ),
+              const SizedBox(height: 30),
+              SizedBox(height: 200, width: double.infinity,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (context, index){
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Container(
+                          color: Colors.red,
+                          height: 200,
+                          width: 150,
+                        ),
+                      ),
+                    );
+                  },
+                ),),
             ],
           ),
         ),
