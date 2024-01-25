@@ -8,7 +8,6 @@ class MovieSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double containerWidth = MediaQuery.of(context).size.width * 0.3;
-    double containerHeight = MediaQuery.of(context).size.width * 0.3 * 2.0 / 3.0;
 
     return SizedBox(
       height: 300,
