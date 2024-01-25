@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-
 class TrendingSlider extends StatelessWidget {
   const TrendingSlider({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double containerWidth = MediaQuery.of(context).size.width * 0.4;
+
     return SizedBox(
       width: double.infinity,
       child: CarouselSlider.builder(
@@ -22,12 +23,14 @@ class TrendingSlider extends StatelessWidget {
           autoPlayCurve: Curves.fastOutSlowIn,
           autoPlayAnimationDuration: const Duration(seconds: 2),
         ),
-        itemBuilder: (context,itemIndex, pageViewIndex){
+        itemBuilder: (context, itemIndex, pageViewIndex) {
           return ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Container(
               height: 300,
-              width: 200,
+              width: MediaQuery.of(context).size.width < 600
+                  ? 200
+                  : containerWidth,
               color: Colors.red,
             ),
           );

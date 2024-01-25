@@ -1,31 +1,38 @@
 import 'package:flutter/material.dart';
 
-
 class MovieSlider extends StatelessWidget {
   const MovieSlider({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 200, width: double.infinity,
+    double containerWidth = MediaQuery.of(context).size.width * 0.3;
+    double containerHeight = MediaQuery.of(context).size.width * 0.3 * 2.0 / 3.0;
+
+    return SizedBox(
+      height: containerHeight,
+      width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         itemCount: 10,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Container(
                 color: Colors.red,
-                height: 200,
-                width: 150,
+                height: containerHeight,
+                width: MediaQuery.of(context).size.width < 600
+                    ? 150
+                    : containerWidth,
               ),
             ),
           );
         },
-      ),);
+      ),
+    );
   }
 }
