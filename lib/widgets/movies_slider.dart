@@ -11,7 +11,7 @@ class MovieSlider extends StatelessWidget {
     double containerHeight = MediaQuery.of(context).size.width * 0.3 * 2.0 / 3.0;
 
     return SizedBox(
-      height: containerHeight,
+      height: 300,
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -24,7 +24,6 @@ class MovieSlider extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: Container(
                 color: Colors.red,
-                height: containerHeight,
                 width: MediaQuery.of(context).size.width < 600
                     ? 150
                     : containerWidth,
