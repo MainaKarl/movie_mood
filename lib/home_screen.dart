@@ -12,10 +12,9 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-late Future<List<Movie>> trendingMovies;
-
-
 class _HomeScreenState extends State<HomeScreen> {
+
+  late Future<List<Movie>> trendingMovies;
 
   @override
   void initState(){
@@ -49,7 +48,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.aBeeZee(fontSize: 25),
               ),
               const SizedBox(height: 30,),
-              const TrendingSlider(),
+              SizedBox(
+                child: FutureBuilder(
+                    future: trendingMovies,
+                    builder: (context,snapshot){
+                      if(snapshot.hasError){
+                        return Center(
+                          child: Text(snapshot.error.toString()),
+                        );
+                      }else if(snapshot.hasData){
+                        return TrendingSlider(snapshot: snapshot,);
+                      }else{
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                    },
+                ),
+              ),
               const SizedBox(height: 30),
               Text('Top Rated Movies',
                 style:GoogleFonts.aBeeZee(
