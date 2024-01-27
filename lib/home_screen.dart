@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_mood/widgets/movies_slider.dart';
 import 'package:movie_mood/widgets/trending_slider.dart';
+import 'apiservice/api.dart';
+import 'models/movie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,7 +12,17 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+late Future<List<Movie>> trendingMovies;
+
+
 class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState(){
+    super.initState();
+    trendingMovies = Api().getTrendingMovies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
