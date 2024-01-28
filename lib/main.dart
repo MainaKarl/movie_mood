@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_mood/colors.dart';
-import 'package:movie_mood/home_screen.dart';
+import 'package:movie_mood/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
