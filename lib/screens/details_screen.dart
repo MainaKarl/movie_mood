@@ -40,12 +40,32 @@ class DetailsScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
             ),
             ),
-            background:Image.network(
+            background:ClipRRect(
+              borderRadius:const BorderRadius.only(
+                bottomLeft: Radius.circular(24),
+                bottomRight: Radius.circular(24),
+              ),
+              child: Image.network(
+                '${Constants.imagePath}${movie.posterPath}',
                 filterQuality: FilterQuality.high,
-                ('${Constants.imagePath}${movie.backDropPath}')),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        )
-      ],),
+          ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(children: [
+              Text('Overview',style:GoogleFonts.belleza(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+              ),)
+            ],),
+          )
+        ),
+      ],
+      ),
     );
   }
 }
