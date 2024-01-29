@@ -56,11 +56,19 @@ class DetailsScreen extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(12),
-            child: Column(children: [
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               Text('Overview',style:GoogleFonts.belleza(
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),)
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+              ),
+              ),
+                const SizedBox(height:25),
+                Text(movie.overview,style:GoogleFonts.openSans(
+                    fontSize:25,
+                    fontWeight: FontWeight.w500,
+                ),)
             ],),
           )
         ),
