@@ -81,14 +81,15 @@ class DetailsScreen extends StatelessWidget {
                         border: Border.all(color: Colors.grey),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      // child: Row(children: [
-                      //   Text(
-                      //     'Release date: ',
-                      //     style: GoogleFonts.openSans,
-                      //     fontSize:17,
-                      //     fontWeight: FontWeight.bold,
-                      //   ),
-                      // ]),
+                      child: Row(children: [
+                        Text(
+                          'Release date: ',
+                          style: GoogleFonts.openSans(
+                          fontSize:17,
+                          fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ]),
                     )
                   ],),),
             ],),
