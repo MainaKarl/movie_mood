@@ -57,18 +57,40 @@ class DetailsScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Text('Overview',style:GoogleFonts.belleza(
+              Text('Overview',
+                style:GoogleFonts.belleza(
                 fontSize: 30,
                 fontWeight: FontWeight.w800,
-              ),
+                ),
               ),
                 const SizedBox(height:25),
-                Text(movie.overview,style:GoogleFonts.openSans(
+                Text(movie.overview,
+                  style:GoogleFonts.openSans(
                     fontSize:25,
                     fontWeight: FontWeight.w500,
-                ),)
+                  ),
+                ),
+                const SizedBox(height:25),
+                SizedBox(
+                  child: Row(children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      // child: Row(children: [
+                      //   Text(
+                      //     'Release date: ',
+                      //     style: GoogleFonts.openSans,
+                      //     fontSize:17,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ]),
+                    )
+                  ],),),
             ],),
           )
         ),
