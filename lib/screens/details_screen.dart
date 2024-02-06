@@ -89,6 +89,13 @@ class DetailsScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           ),
                         ),
+                        Text(
+                          movie.releaseDate,
+                            style: GoogleFonts.openSans(
+                            fontSize:17,
+                            fontWeight: FontWeight.bold,
+                            ),
+                        )
                       ]),
                     )
                   ],),),
