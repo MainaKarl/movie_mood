@@ -97,9 +97,39 @@ class DetailsScreen extends StatelessWidget {
                             ),
                         )
                       ]),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          Text('Rating ',
+                            style: GoogleFonts.openSans(
+                            fontSize:17,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          ),
+                          const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          Text('${movie.voteAverage.toStringAsFixed(1)}/10',
+                            style: GoogleFonts.openSans(
+                              fontSize:17,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     )
-                  ],),),
-            ],),
+                  ],
+                  ),
+                ),
+              ],
+            ),
           )
         ),
       ],
